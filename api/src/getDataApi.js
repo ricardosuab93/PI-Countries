@@ -16,21 +16,23 @@ const getDataApi = async() => {
             population: c.population,
         }
     });
+    //console.log('apidb '+apiDb.length)
     return apiDb;
 };
 
 async function getInfoApi () {
     try {
         const countries = await getDataApi();
+        console.log('countries '+ countries.length)
         await Promise.all(
             countries.map(async (c) => {
                 //console.log(c);
                 await Country.create(c);
             })
         );
-        //console.log('se cargo la api')
+        console.log('se cargo la api')
     }catch (error){
-        //console.log(error)
+        console.log(error)
     };
 };
 

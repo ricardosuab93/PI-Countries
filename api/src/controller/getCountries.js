@@ -3,7 +3,7 @@ const axios = require('axios');
 const { getInfoApi } = require('../getDataApi.js');
 
 const getDataDb = async () => {
-    return await Country.findAll({include : Activity })
+    return await Country.findAll({ include : Activity })
 };
 
 const getAllCountries = async () => {
@@ -30,7 +30,8 @@ const getCountryById = async (req, res) => {
     if (id) {
         try {
             let country = countries.filter((fl) => fl.id.toLowerCase() === id.toLowerCase());
-            country.length ? res.status(200).json(country) : res.status(404).send('Ningun pais coincide');
+            country ? res.status(200).json(country) : res.status(404).send('Ningun pais coincide');
+            console.log(country)
         }catch (e){
             res.status(500).send(e);
         }      
@@ -46,13 +47,14 @@ const getCountryByName = async (req, res) => {
     if (name) {
       try {        
         let country = countries.filter((fl) => fl.name.toLowerCase().includes(name.toLowerCase()));
-        country.length ? res.status(200).json(country) : res.status(404).send('Ningun pais coincide');
+        (country.length) ? res.status(200).json(country) : res.status(404).json('Ningun pais coincide');
         console.log(country)
-      } catch (e) {        
-        res.status(500).send(e);
+      } catch (e) {      
+        //res.status(404).json('Ningun pais coincide');  
+        res.status(500).send('error 500 '+e);
       }
-    }else{
-        res.status(404).send('Escribe un nombre');
+    // }else{
+    //     res.status(404).json('Escribe un nombre');
     }
 };
 

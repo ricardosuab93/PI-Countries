@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function LandingPage() {
   return (
     <div>
-      <h1>Henry Countries</h1>
+      <h1>Henry Countriesii</h1>
       <h3>este es el landing</h3>
       <Link to= {'/home'}><h1> Comencemos </h1></Link>
     </div>

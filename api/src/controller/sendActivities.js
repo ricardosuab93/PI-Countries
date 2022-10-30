@@ -1,7 +1,11 @@
+const { UUIDV4 } = require('sequelize');
+
+const { v4: uuidv4 } = require('uuid');
+
 const { Country, Activity } = require ('../db.js');
 
-const addActivity = async(req, res) => {
-    const { name, difficulty, duration, season, countryId } = req.body;
+const postActivities = async(req, res) => {
+    const { name, difficulty, duration, season, countries } = req.body;
     try {
         const validateActivity = await Activity.findOne({
             where: {
@@ -9,31 +13,35 @@ const addActivity = async(req, res) => {
             }
         });
 
-        if (!name || !difficulty || !duration || !season || !countryId) {
-            res.status(404).json('Llena todos los campos');
+        if (!name || !difficulty || !duration || !season || !countries) {
+            res.status(404).json('Datos incompletos');
         }
         if (validateActivity) {
-            res.status(404).json('Ya existe');
+            res.status(404).json('This activity already exist.');
+        
+        } else {
+                
+            Activity.create({ name, difficulty, duration, season }).then(activity => {
+                countries.forEach(id => {
+                    Country.findByPk(id).then(async Country => {
+                        await Country.addActivity(activity);
+                    }).catch(error => {
+                        console.log(error);
+                    });    
+                
+                });
+            })
         }
-        const newActivity = await Activity.create({
-            id,
-            name,
-            difficulty,
-            duration,
-            season,
-        });
-
-        for (const cId of countryId) {
-            await newActivity.addCountry(cId);
-        }
-    
+        
         res.status(200).send('Añadido');
 
     }catch(err) {
+        //if (err.code === '23505') return res.status(404).send('Activity already exists.');
         res.status(500).send(err)
-
+        console.log(err)
     }
 };
+
 
 const getActivities = async (req, res) => {
     try{
@@ -45,6 +53,6 @@ const getActivities = async (req, res) => {
 };
 
 module.exports = {
-    addActivity,
+    postActivities,
     getActivities
 }
