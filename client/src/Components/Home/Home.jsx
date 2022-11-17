@@ -90,7 +90,7 @@ const Home = () => {
   return (
     <div className='containerPrincipal'>
       <div className='headerContainer'>
-        <h1>Hola Cris</h1>
+        <h1>Henry Countries</h1>
         <Link className='linkCreate' to = '/activities'> <h2>Crear activididad</h2> </Link>
       </div>
       <div className='contentContainer'>
