@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 import './CountryDetail.css';
-
+import imgLoading from '../../Images/a2d9a-mapamundi.webp'
 import * as actions from '../../Redux/actions';
 
 const CountryDetail = (props) => {
@@ -65,7 +65,7 @@ const CountryDetail = (props) => {
         </div>
         :
         <div>
-          <img src={'../../Images/a2d9a-mapamundi.webp'} alt='Loading'/>
+          <img src={imgLoading} alt='Loading'/>
         </div>
       }
       
