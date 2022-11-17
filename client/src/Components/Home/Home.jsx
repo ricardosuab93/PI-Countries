@@ -54,7 +54,7 @@ const Home = () => {
 
   // ORDENAMIENTO
   const [ option, setOption ]  = useState('');
-  //console.log('option '+option)
+  console.log('option '+option)
 
   function sortCountriesAlph(e){
     dispatch(actions.sortCountriesAlph(e.target.value))

@@ -1,7 +1,7 @@
 import s from './LandingPage.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import A_large_blank_world_map from './A_large_blank_world_map.svg';
+// import A_large_blank_world_map from './A_large_blank_world_map.svg';
 //import Home from '../Home/Home.jsx';
 
 export default function LandingPage() {
