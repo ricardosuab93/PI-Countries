@@ -65,7 +65,7 @@ const CountryDetail = (props) => {
         </div>
         :
         <div>
-          <img src='../../Images/a2d9a-mapamundi.webp' alt='Loading'/>
+          <img src={'../../Images/a2d9a-mapamundi.webp'} alt='Loading'/>
         </div>
       }
       
