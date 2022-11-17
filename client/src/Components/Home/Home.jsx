@@ -13,7 +13,7 @@ import SortPop from '../Barra/SortPop.jsx';
 import FilterCont from '../Barra/FilterCont.jsx';
 import Pagination from '../PaginationComp/Pagination';
 import FilterAct from '../Barra/FilterAct.jsx';
-import GifLoading from "../../Images/render.gif";
+import GifLoading from '../../Images/globe-15.webp';
 //import CreateForm from '../CreateForm/CreateForm';
 
 
@@ -123,9 +123,9 @@ const Home = () => {
               ))
               :
               (
-                <picture className="home__loading">
+                <div className="home__loading">
                   <img src={GifLoading} alt="Loading" />
-                </picture>
+                </div>
               ) 
             }
           </div>
