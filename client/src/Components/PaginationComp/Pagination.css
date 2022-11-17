@@ -1,0 +1,23 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonP{ 
+    border: 1px hidden #0099CC;
+    color: #0099CC;
+    background: transparent;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    font-weight: bolder;
+    font-family: 'Russo One', sans-serif;  
+}
+.buttonP:hover{
+    background-color: #008CBA;
+    color: white;
+}
+

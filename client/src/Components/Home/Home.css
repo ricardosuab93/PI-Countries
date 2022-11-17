@@ -1,6 +1,54 @@
+.containerPrincipal{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+}
+
+.centerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navigationContainer {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .cardsContainer{
     display: grid;
-    grid-template-columns: 437px 437px 437px;
+    grid-template-columns: 360px 360px 360px;
     gap: 10px;
     padding: 10px;
+}
+
+.linkCreate{
+    text-decoration: none;
+    color: black;
+}
+.linkCreate:hover{
+    text-transform:uppercase;
+}
+
+.link:visited{
+    text-decoration: none
 }

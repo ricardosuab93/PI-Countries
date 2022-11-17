@@ -1,9 +1,21 @@
-import { GET_ALL_COUNTRIES, GET_COUNTRY_DETAIL,GET_COUNTRY_BY_NAME,SORT_COUNTRIES_ALPH, FILTER_BY_CONTINENT, SORT_COUNTRIES_POP, GET_ERROR_NAME } from '../actions';
+import { 
+  GET_ALL_COUNTRIES,
+  GET_COUNTRY_DETAIL,
+  GET_COUNTRY_BY_NAME,
+  SORT_COUNTRIES_ALPH, 
+  FILTER_BY_CONTINENT, 
+  SORT_COUNTRIES_POP, 
+  POST_ACTIVITY,
+  GET_ACTIVITIES,
+  FILTER_BY_ACTIVITY
+} from '../actions';
 
 const initialState = {
   countries: [],
   countryDetail: [],
   sortCountries: [],
+  activities: [],
+  sortActivities: []
 };
 
 
@@ -27,11 +39,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         countries: action.payload
       }
-    // case GET_ERROR_NAME:
-    //   return{
-    //     ...state,
-    //     countries: action.payload
-    // }
 
     case SORT_COUNTRIES_ALPH:
       console.log('payloadAlph: ' +action.payload)
@@ -43,7 +50,7 @@ const rootReducer = (state = initialState, action) => {
       console.log(sorted)
       return { 
         ...state, 
-        sortCountries: action.payload === 'all' ? state.countries : sorted 
+        sortCountries: action.payload === 'All' ? state.countries : sorted 
       }
     
     case SORT_COUNTRIES_POP:
@@ -55,15 +62,48 @@ const rootReducer = (state = initialState, action) => {
     
     case FILTER_BY_CONTINENT:
       console.log('payloadCont: ' +action.payload)
-      //const allCountries2 = state.countries;
-      //console.log(allCountries)
+
       let filtered; 
       if(action.payload !== 'All') filtered  = state.sortCountries.filter((c) => c.continent === action.payload)
-      
-        console.log(filtered)
+      return { 
+        ...state, 
+        countries: action.payload === 'All' ? state.sortCountries : filtered
+      }
+    
+    case POST_ACTIVITY:
+      console.log('payload post:' + action.payload)
+      return {
+        ...state,
+      }
 
-    return { ...state, countries: action.payload === 'All' ? state.sortCountries : filtered}
+    case GET_ACTIVITIES:
+      return {
+        ...state,
+        activities: action.payload,
+        sortActivities: action.payload
+      }
+    
+    
+    case FILTER_BY_ACTIVITY:
+      console.log('payloadAct: ' +action.payload)
       
+      const countriesAct = state.sortCountries.filter((pais) => pais.activities.length > 0);  
+
+      let array = [];
+
+      for (let i = 0; i < countriesAct.length; i++) {
+        for (let j = 0; j < countriesAct[i].activities.length; j++) {
+          if (countriesAct[i].activities[j].name === action.payload) {
+            array.push(countriesAct[i]);
+          }
+        }
+      }
+
+      return {
+        ...state,
+        countries:  action.payload === "All" ? state.sortCountries : array
+      }
+    
     default:
       return state
 

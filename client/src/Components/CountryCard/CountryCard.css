@@ -1,19 +1,29 @@
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid ;    
+.cardCountry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  /* border: 3px solid rgb(48, 47, 47); */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.cardCountry:hover{
+  /* border: 4px solid black; */
+  box-shadow: 4px 8px 8px 4px rgba(6, 5, 5, 0.724);
 }
 
-.card img {
-    padding: 6px 12px;
-    width: 15rem;
-    height: 10rem;
+.cardCountry img {
+  padding: 6px 12px;
+  width: 15rem;
+  height: 10rem;
+}
+.cardLink{
+  text-decoration: none;
+  color: black;
 }
 
 h3,
 h4{
+  font-family: 'Russo One', sans-serif;
   font-weight: bold;
 }

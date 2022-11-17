@@ -7,8 +7,8 @@ const CountryCard = (props) => {
   arr.push(props.continent)
   //console.log(props.continent)
   return (
-    <div className='card'>
-      <Link to={`/countries/${props.id}`}>
+    <div className='cardCountry'>
+      <Link className='cardLink' to={`/countries/${props.id}`}>
         <img src={props.flag} alt="country_flag" />
         <h3>{props.name}</h3>
         <h4>{props.continent}</h4>

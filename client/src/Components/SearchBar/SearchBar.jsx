@@ -1,3 +1,5 @@
+import './SearchBar.css'
+
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -13,18 +15,16 @@ const SearchBar = () => {
     console.log(name);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    dispatch(getCountryByName(name));
-    setName('');
-  }
   //React.useEffect(() => { dispatch(actions.getCountryDetail(id)) }, [id, dispatch] ) //asdad
-  React.useEffect(() => { dispatch(getCountryByName(name)) }, [name, dispatch] ) //asdad
+  React.useEffect(() => { 
+    dispatch(getCountryByName(name)) 
+  }, [name, dispatch] ) //asdad
 
 
   return (
-    <div>
-      <input type='text' value={name} placeholder='Busca tu pais...' onChange={handleInputChange} />
+    <div className='search'>
+      <input className='inputSearch' type='text' value={name} placeholder='Busca tu pais...' 
+        onChange={handleInputChange} />
       {/* <button type='submit' onClick={handleSubmit}>Buscar</button> */}
     </div>
   )

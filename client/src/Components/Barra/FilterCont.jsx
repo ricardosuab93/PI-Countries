@@ -1,16 +1,16 @@
+import s from './Barra.module.css'
+
 import React from 'react';
 
 
 const FilterCont = (props) => {
- 
-
   return (
-    <div>
-       {/* <input type='text' value={continent} placeholder='Busca tu pais...' onChange={handleInputChange} />       */}
-      <label>
-      Filter by continent:
-        <select onChange={(e) => props.handleFilterContinent(e)} >
-          <option value="All">All</option>
+    <div className={s.container}>
+      <label className={s.label}>
+        Filtra por continente:
+      </label>
+        <select className={s.select} onChange={(e) => props.handleFilterContinent(e)} >
+          <option value="All">Todos</option>
           <option value="South America"> South America </option>
           <option value="North America"> North America </option>
           <option value="Europe"> Europe </option>
@@ -18,7 +18,6 @@ const FilterCont = (props) => {
           <option value="Asia"> Asia </option>
           <option value="Oceania"> Oceania </option>
         </select>
-      </label>
     </div>
   )
 }

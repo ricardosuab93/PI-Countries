@@ -1,0 +1,128 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    /* background-color: bisque;
+    background-position: 100vh; */
+    
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;    
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+
+.fieldContainer{
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.inputForm{
+    border: 2px solid #4a96e1;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+.selectForm{
+    border: 2px solid #4a96e1;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+}
+.buttonForm{
+    justify-content: center;
+    border: none;
+    /* border: 2px solid #4a96e1; */
+    border-radius: 10px;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+    padding: 6px;
+    margin: 10px 110px;
+    float: none;
+}
+.buttonForm:hover{
+    border: 2px solid #4a96e1;
+    background-color: #4a96e1;
+    color: white;
+    font-weight: lighter;
+}
+.buttonForm:disabled,
+.buttonForm[disabled]{
+  border: 2px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  font-weight: bold;
+}
+
+.selectedContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 12px;
+
+}
+.selected{
+    display: grid;
+    grid-template-columns: 20px 20px 20px 20px 20px;
+    gap: 55px;
+}
+
+.selectedS{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+.buttonS{
+    border: none;
+    background-color: white;
+    color: black;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bold;
+    padding: 1px 4px;
+    margin-top: 2px;
+    margin-bottom: -7px;
+    margin-left: 40px;
+    float: none;
+}
+.buttonS:hover{
+    border-radius: 50%;
+    background-color: #4a96e1;
+    color: white;
+}
+.pS{
+    margin: 2px 2px;
+}
+
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    color: red;
+    font-size: smaller;
+}

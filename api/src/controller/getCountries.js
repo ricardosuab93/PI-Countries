@@ -16,11 +16,18 @@ const getAllCountries = async () => {
 };
 
 const getCountries = async (req, res) => {
-    let countries = await getAllCountries();
+    const { name } = req.query;
     try {
-        countries.length ? res.status(200).json(countries) : res.status(404).send('Ningun pais encontrado')
+        let countries = await getAllCountries();
+        if(name){
+            let country = countries.filter((fl) => fl.name.toLowerCase().includes(name.toLowerCase()));
+            (country.length) ? res.status(200).json(country) : res.status(404).json('Ningun pais coincide');
+        }else{
+            countries.length ? res.status(200).json(countries) : res.status(404).send('Ningun pais encontrado')
+        }
+
     }catch(e){
-        res.status(500).send(e)
+        console.log(e);
     }
 };
 
@@ -30,7 +37,7 @@ const getCountryById = async (req, res) => {
     if (id) {
         try {
             let country = countries.filter((fl) => fl.id.toLowerCase() === id.toLowerCase());
-            country ? res.status(200).json(country) : res.status(404).send('Ningun pais coincide');
+            country ? res.status(200).json(country) : res.status(404).send('Ningun pais coincide');            
             console.log(country)
         }catch (e){
             res.status(500).send(e);
@@ -40,26 +47,8 @@ const getCountryById = async (req, res) => {
     }
 };
 
-const getCountryByName = async (req, res) => {
-    const { name } = req.query;
-    let countries = await getAllCountries();
-    console.log(name)
-    if (name) {
-      try {        
-        let country = countries.filter((fl) => fl.name.toLowerCase().includes(name.toLowerCase()));
-        (country.length) ? res.status(200).json(country) : res.status(404).json('Ningun pais coincide');
-        console.log(country)
-      } catch (e) {      
-        //res.status(404).json('Ningun pais coincide');  
-        res.status(500).send('error 500 '+e);
-      }
-    // }else{
-    //     res.status(404).json('Escribe un nombre');
-    }
-};
 
 module.exports = {
     getCountries,
-    getCountryById,
-    getCountryByName
+    getCountryById
 }

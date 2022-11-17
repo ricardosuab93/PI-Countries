@@ -1,3 +1,5 @@
+import './Pagination.css'
+
 import React from 'react'
 
 const Pagination = (props) => {
@@ -9,10 +11,10 @@ const Pagination = (props) => {
   }
 
   return (
-    <nav>
-      <ul className="pagination">
+    <nav className='pagination'>
+      <ul >
         {pageNumbers?.map((number) => (
-            <button key={number} onClick={() => props.paginate(number)} >
+            <button className='buttonP' key={number} onClick={() => props.paginate(number)} >
               {number}
             </button>
           ))}

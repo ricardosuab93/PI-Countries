@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 import './CountryDetail.css';
 
@@ -29,21 +30,38 @@ const CountryDetail = (props) => {
     <div className='contenedorDetail'>
       <h1>Detalles de pais</h1>
       {
-        countryDetail ? 
-        <div className='countryDetail'>
-          <div className='infoPrincipal'>
-            <img src={countryDetail.flag} alt={countryDetail.name} />
-            <h1>{countryDetail.name} - {countryDetail.id}</h1>
-            <h1>{countryDetail.continent}</h1>
+        countryDetail ?
+        <div className='infoContainer'>
+          <div className='countryDetail'>
+            <div className='card'>
+              <div className='infoPrincipal'>
+                <img src={countryDetail.flag} alt={countryDetail.name} />
+                <h1>{countryDetail.name} - {countryDetail.id}</h1>
+                <h1>{countryDetail.continent}</h1>
+              </div>
+              <div className='infoSecundaria'>
+                <h1>Detalles</h1>
+                <h3>Capital: {countryDetail.capital}</h3>
+                <h3>Subregion: {countryDetail.subregion}</h3>
+                <h3>Area: {formatNumber(countryDetail.area)} km²</h3>
+                <h3>Poblacion: {formatNumber(countryDetail.population)}</h3>
+                <Link to='/activities'> <button className='buttonCard'>Crear actividad</button> </Link>
+              </div>
+            </div>       
           </div>
-          <div className='infoSecundaria'>
-            <h1>Detalles</h1>
-            <h3>Capital: {countryDetail.capital}</h3>
-            <h3>Subregion: {countryDetail.subregion}</h3>
-            <h3>Area: {formatNumber(countryDetail.area)} km²</h3>
-            <h3>Poblacion: {formatNumber(countryDetail.population)}</h3>
-            <h3>Actividades: {countryDetail.activities}</h3>
-          </div>                    
+          <div className='infoActividad'>
+              <h1>Actividades: </h1>              
+                {
+                countryDetail.activities.length > 0? 
+                  countryDetail.activities.map(a => 
+                    <ul>
+                      <h2>{a.name}</h2>
+                    </ul>
+                  )
+                  :
+                  <h1>Sin actividades aun</h1>
+                }
+            </div>
         </div>
         :
         <h1>no country</h1>

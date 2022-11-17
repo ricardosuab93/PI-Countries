@@ -1,0 +1,33 @@
+.container{
+    height: 85px;
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #0099CC;
+    border-radius: 20px;
+    margin: 6px 12px;
+    /* padding: 3px 6px; */
+}
+.label{
+    font-family: 'Russo One', sans-serif;
+    align-items: center;
+    margin: 2px 2px;
+}
+.select{
+    height: 25px;
+    width: 150px;
+    font-family: 'Russo One', sans-serif;
+    border: 2px solid #0099CC;
+    border-radius: 10px;
+    align-items: center;
+    box-shadow: 2px 2px 8px #999;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+}
+option{
+    border-radius: 20px;
+    justify-content: center;
+}

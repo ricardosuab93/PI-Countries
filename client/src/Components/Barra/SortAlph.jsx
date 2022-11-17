@@ -1,17 +1,18 @@
+import s from './Barra.module.css'
+
 import React from 'react';
 
 const SortAlph = (props) => {  
-
   return (
-    <div>
-      <label>
-        Sort alphabetically
-        <select onChange={(e) => props.handleSortCountries(e)}>
-          <option value='all'>All</option>
-          <option value='asc'>Ascending</option>
-          <option value='desc'>Descending</option>
-        </select>
+    <div className={s.container}>
+      <label className={s.label}>
+        Orden alfabetico:
       </label>
+        <select className={s.select} onChange={(e) => props.handleSortCountries(e)}>
+          <option value='All'>Todos</option>
+          <option value='asc'>Ascendentemente</option>
+          <option value='desc'>Descendentemente</option>
+        </select>
     </div>
   )
 }
