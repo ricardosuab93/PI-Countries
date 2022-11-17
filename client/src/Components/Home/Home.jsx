@@ -122,11 +122,10 @@ const Home = () => {
                 />
               ))
               :
-              (
                 <div className="home__loading">
                   <img src={GifLoading} alt="Loading" />
                 </div>
-              ) 
+               
             }
           </div>
         </div>

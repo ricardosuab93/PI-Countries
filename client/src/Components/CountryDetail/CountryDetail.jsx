@@ -59,7 +59,7 @@ const CountryDetail = (props) => {
                     </ul>
                   )
                   :
-                  <h1>Sin actividades aun</h1>
+                  <h2>Sin actividades aun</h2>
                 }
             </div>
         </div>
