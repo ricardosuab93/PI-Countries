@@ -10,11 +10,12 @@ export const POST_ACTIVITY = 'POST_ACTIVITY';
 export const GET_ACTIVITIES = 'GET_ACTIVITIES';
 export const FILTER_BY_ACTIVITY = 'FILTER_BY_ACTIVITY';
 
-
+// const baseUrl = 'http://localhost:3001'
+const baseUrl = 'https://pi-countries-back-production-b7fd.up.railway.app/'
 
 export const getAllCountries = () => {
     return async function (dispatch){
-        return (fetch('http://localhost:3001/countries')
+        return (fetch(`${baseUrl}/countries`)
         .then(response => response.json())
         .then(response => dispatch({type: GET_ALL_COUNTRIES, payload: response})));
     }
@@ -22,7 +23,7 @@ export const getAllCountries = () => {
 
 export const getCountryDetail = (id) => {
     return async function (dispatch){
-        return (fetch(`http://localhost:3001/countries/${id}`)
+        return (fetch(`${baseUrl}/countries/${id}`)
         .then(response => response.json())
         .then(response => dispatch({type: GET_COUNTRY_DETAIL, payload: response})))
     }
@@ -30,7 +31,7 @@ export const getCountryDetail = (id) => {
 
 export const getCountryByName = (name) => {
     return async function (dispatch){
-        return (fetch(`http://localhost:3001/countries?name=${name}`)
+        return (fetch(`${baseUrl}/countries?name=${name}`)
         .then(response => response.json())
         .then(response => dispatch({type: GET_COUNTRY_BY_NAME, payload: response})))
         //.catch(error => dispatch({type: GET_ERROR_NAME, payload:error})))
@@ -61,7 +62,7 @@ export const filterByContinent = (continent) => {
 
 export const postActivity = (payload) => {
     return async function (dispatch){
-        const response = await axios.post('http://localhost:3001/activities', payload)
+        const response = await axios.post(`${baseUrl}/activities`, payload)
         console.log(response)
         return response
     }
@@ -70,7 +71,7 @@ export const postActivity = (payload) => {
 
 export const getActivities = () => {
     return async function (dispatch){
-        const response = await axios.get('http://localhost:3001/activities/');
+        const response = await axios.get(`${baseUrl}/activities/`);
         dispatch({type: GET_ACTIVITIES, payload: response.data})
     }
 
