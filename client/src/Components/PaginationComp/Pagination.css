@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.buttonP{ 
+.buttonDes{ 
     border: 1px hidden #0099CC;
     color: #0099CC;
     background: transparent;
@@ -16,8 +16,22 @@
     font-weight: bolder;
     font-family: 'Russo One', sans-serif;  
 }
-.buttonP:hover{
+.buttonDes:hover{
     background-color: #008CBA;
     color: white;
+}
+
+.buttonAct{
+    font-family: 'Russo One', sans-serif;  
+    font-weight: bolder;
+    background-color: #008CBA;
+    color: white;
+    border: 1px hidden #0099CC;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+
 }
 

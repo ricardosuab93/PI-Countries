@@ -28,6 +28,9 @@ const CountryDetail = (props) => {
 
   return (
     <div className='contenedorDetail'>
+      <div className='contenedorTitle'>
+        <Link className='link' to='/home'><h1>Henry Countries</h1></Link>
+      </div>
       <h1>Detalles de pais</h1>
       {
         countryDetail ?
@@ -43,8 +46,8 @@ const CountryDetail = (props) => {
                 <h1>Detalles</h1>
                 <h3>Capital: {countryDetail.capital}</h3>
                 <h3>Subregion: {countryDetail.subregion}</h3>
-                <h3>Area: {formatNumber(countryDetail.area)} km²</h3>
-                <h3>Poblacion: {formatNumber(countryDetail.population)}</h3>
+                <h3>Area: {formatNumber(countryDetail.area)} km².</h3>
+                <h3>Poblacion: {formatNumber(countryDetail.population)} hab.</h3>
                 <Link to='/activities'> <button className='buttonCard'>Crear actividad</button> </Link>
               </div>
             </div>       

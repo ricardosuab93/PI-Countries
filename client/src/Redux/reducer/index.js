@@ -25,7 +25,8 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         countries: action.payload,
-        sortCountries: action.payload
+        sortCountries: action.payload,
+        countryDetail: [],
       }
       
     case GET_COUNTRY_DETAIL:

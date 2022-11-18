@@ -151,7 +151,7 @@ const CreateForm = () => {
           <div className={s.fieldContainer}>
             <label className={s.label}>Paises: </label>
             <select className={s.selectForm} name='countries' onChange={handleCountriesSelected} >
-              <option >Select the countries of the activity...</option>
+              <option  >Select the countries of the activity...</option>
               {countries?.map(c => (
                 <option key={c.id} value={c.id}>{c.name}</option>
               ))}   

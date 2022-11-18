@@ -9,15 +9,18 @@ const Pagination = (props) => {
     pageNumbers.push(i);
     // debugger
   }
-
+  console.log(props)
   return (
     <nav className='pagination'>
+      
       <ul >
-        {pageNumbers?.map((number) => (
-            <button className='buttonP' key={number} onClick={() => props.paginate(number)} >
+        {
+          pageNumbers?.map((number) => (
+            <button className={number === props.page ? 'buttonAct' : 'buttonDes' } key={number} onClick={() => props.paginate(number)} >
               {number}
             </button>
-          ))}
+          ))
+        }
       </ul>
     </nav>
   );

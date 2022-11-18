@@ -52,3 +52,11 @@
 .link:visited{
     text-decoration: none
 }
+
+.homeLoading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 550px;
+}

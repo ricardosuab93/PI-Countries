@@ -11,10 +11,10 @@ const FilterAct = (props) => {
         </label>
           {(props.activities.length === 0)? <p>No se han creado actividades</p> :
             <select className={s.select} onChange={(e) => props.handleFilterActivity(e)} >
-            <option value='All'> Todos </option>
+            <option value='All' key='all'> Todos </option>
             {
               props.activities?.map((a) => (
-                <option value={a.name}>{a.name}</option>
+                <option value={a.name} key={a.name}>{a.name}</option>
               ))
             }
                

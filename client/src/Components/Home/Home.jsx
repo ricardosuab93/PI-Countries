@@ -51,6 +51,7 @@ const Home = () => {
   );
 
   const paginated = (pageNumber) => setCurrentPage(pageNumber);
+  // console.log(paginated);
 
   // ORDENAMIENTO
   const [ option, setOption ]  = useState('');
@@ -107,11 +108,12 @@ const Home = () => {
               countriesPerPage={countriesPerPage}
               countries={countries.length}
               paginate={paginated}
+              page={currentPage}
             />
           </div>
           <div className='cardsContainer'>        
             {        
-              currentCountries ? 
+              currentCountries.length > 0 ? 
               currentCountries.map((country) => (            
                 <CountryCard
                   key={country.id}
@@ -122,7 +124,7 @@ const Home = () => {
                 />
               ))
               :
-                <div className="home__loading">
+                <div className="homeLoading">
                   <img src={GifLoading} alt="Loading" />
                 </div>
                

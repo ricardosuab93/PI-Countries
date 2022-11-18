@@ -8,7 +8,17 @@
     flex-direction: column;
 
 }
-
+.contenedorTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1075px;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
 .infoContainer{
     display: flex;
     flex-direction: row;
