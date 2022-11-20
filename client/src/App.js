@@ -19,10 +19,8 @@ function App() {
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/home' component={Home} />
         <Route exact path='/countries/:id' render={({match}) => < CountryDetail match={ match }/>}/>      
-        {/* <Route path='/countries/:id' component={CountryDetail} /> */}
         <Route exact path='/activities' component={CreateForm}  />
         <Route path='/*' component={Comp404}/>
-
       </Switch>
       
     </div>

@@ -14,6 +14,7 @@ import FilterCont from '../Barra/FilterCont.jsx';
 import Pagination from '../PaginationComp/Pagination';
 import FilterAct from '../Barra/FilterAct.jsx';
 import GifLoading from '../../Images/globe-15.webp';
+import Broken from '../../Images/mapa roto.jpg';
 //import CreateForm from '../CreateForm/CreateForm';
 
 
@@ -92,12 +93,14 @@ const Home = () => {
     <div className='containerPrincipal'>
       {
         countries[0] === 'Ningun pais coincide' ?
-          (<div>
+          (<div className='errorContainer'>
             <h2>Ningun pais encontrado</h2>
-            <button onClick={() => window.location.reload()}>refresca la pagina</button>
+            <h3 onClick={() => window.location.reload()}>Por favor refresca la pagina</h3>
+            <img src={Broken}alt='not found' />
+            {/*<button onClick={() => window.location.reload()}>refresca la pagina</button>*/}            
           </div>)
       :(
-      <div>
+      <>
         <div className='headerContainer'>
           <h1>Henry Countries</h1>
           <Link className='linkCreate' to = '/activities'> <h2>Crear activididad</h2> </Link>
@@ -143,7 +146,7 @@ const Home = () => {
           
           </div>
         </div>
-      </div>
+      </>
       )}
     </div>
   )

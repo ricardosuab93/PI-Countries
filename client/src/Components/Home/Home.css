@@ -5,6 +5,21 @@
     font-weight: bold;
 }
 
+.errorContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.errorContainer img{
+    height: 500px;
+    width: 580px;
+}
+.errorContainer h3:hover{
+    cursor: pointer;
+    text-transform: uppercase;
+}   
+
 .headerContainer {
     display: flex;
     flex-direction: row;
