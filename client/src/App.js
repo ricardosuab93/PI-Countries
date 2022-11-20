@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage.jsx';
 import Home from './Components/Home/Home.jsx';
 import CountryDetail from './Components/CountryDetail/CountryDetail.jsx';
-import ErrorBundary from './Components/404Comp/ErrorBundary.jsx';
+//import ErrorBundary from './Components/404Comp/ErrorBundary.jsx';
 import CreateForm from './Components/CreateForm/CreateForm';
 import Comp404 from './Components/404Comp/Comp404.jsx'
 
