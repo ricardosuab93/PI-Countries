@@ -7,7 +7,7 @@ const { Country, Activity } = require ('../db.js');
 
 const postActivities = async(req, res) => {
     const { name, difficulty, duration, season, countries } = req.body;
-    console.log(name, difficulty, duration, season, countries);
+    //console.log(name, difficulty, duration, season, countries);
     try {
         if(name && difficulty && duration && season && countries){
             const activity = await Activity.create({

@@ -23,7 +23,7 @@ const Home = () => {
   // PARA RENDERIZAR CARDS
   const countries = useSelector((state) => state.countries)
   useEffect(() => { dispatch(actions.getAllCountries()) }, [dispatch] ) //asdad
-  //console.log(countries)
+  console.log(countries)
 
   // PARA ACTIVITIES
   const activities = useSelector((state) => state.activities);
@@ -90,48 +90,61 @@ const Home = () => {
 
   return (
     <div className='containerPrincipal'>
-      <div className='headerContainer'>
-        <h1>Henry Countries</h1>
-        <Link className='linkCreate' to = '/activities'> <h2>Crear activididad</h2> </Link>
-      </div>
-      <div className='contentContainer'>
-        <div className='filterContainer'>
-          <SortAlph handleSortCountries = {sortCountriesAlph} /> 
-          <SortPop handleSortCountries = {sortCountriesPop} />
-          <FilterCont handleFilterContinent = {filterCountriesCont} />
-          <FilterAct activities={activities} handleFilterActivity={filterCountriesAct} />
+      {
+        countries[0] === 'Ningun pais coincide' ?
+          (<div>
+            <h2>Ningun pais encontrado</h2>
+            <button onClick={() => window.location.reload()}>refresca la pagina</button>
+          </div>)
+      :(
+      <div>
+        <div className='headerContainer'>
+          <h1>Henry Countries</h1>
+          <Link className='linkCreate' to = '/activities'> <h2>Crear activididad</h2> </Link>
         </div>
-        <div className='centerContainer'>
-          <div className='navigationContainer'>
-            <SearchBar />
-            <Pagination
-              countriesPerPage={countriesPerPage}
-              countries={countries.length}
-              paginate={paginated}
-              page={currentPage}
-            />
+        <div className='contentContainer'>
+          <div className='filterContainer'>
+            <SortAlph handleSortCountries = {sortCountriesAlph} /> 
+            <SortPop handleSortCountries = {sortCountriesPop} />
+            <FilterCont handleFilterContinent = {filterCountriesCont} />
+            <FilterAct activities={activities} handleFilterActivity={filterCountriesAct} />
           </div>
-          <div className='cardsContainer'>        
-            {        
-              currentCountries.length > 0 ? 
-              currentCountries.map((country) => (            
-                <CountryCard
-                  key={country.id}
-                  id={country.id}
-                  flag={country.flag}
-                  name={country.name}
-                  continent={country.continent}
-                />
-              ))
-              :
-                <div className="homeLoading">
-                  <img src={GifLoading} alt="Loading" />
-                </div>
-               
-            }
+          <div className='centerContainer'>
+            <div className='navigationContainer'>
+              <SearchBar 
+                setCurrentPage={setCurrentPage}
+              />
+              <Pagination
+                countriesPerPage={countriesPerPage}
+                countries={countries.length}
+                paginate={paginated}
+                page={currentPage}
+              />
+            </div>
+            <div className='cardsContainer'>        
+              {        
+                currentCountries.length > 0 ? 
+                currentCountries.map((country) => (            
+                  <CountryCard
+                    key={country.id}
+                    id={country.id}
+                    flag={country.flag}
+                    name={country.name}
+                    continent={country.continent}
+                  />
+                ))
+                :
+                  <div className="homeLoading">
+                    <img src={GifLoading} alt="Loading" />
+                  </div>
+                
+              }
+            </div>
+          
           </div>
         </div>
       </div>
+      )}
     </div>
   )
 }

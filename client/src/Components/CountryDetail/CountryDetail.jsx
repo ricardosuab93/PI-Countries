@@ -7,6 +7,8 @@ import './CountryDetail.css';
 import imgLoading from '../../Images/a2d9a-mapamundi.webp'
 import * as actions from '../../Redux/actions';
 
+import imgReverse from '../../Images/globe-15.webp'
+
 const CountryDetail = (props) => {
   const dispatch = useDispatch();
   let id = props.match.params.id;
@@ -38,9 +40,13 @@ const CountryDetail = (props) => {
           <div className='countryDetail'>
             <div className='card'>
               <div className='infoPrincipal'>
-                <img src={countryDetail.flag} alt={countryDetail.name} />
+                <img className='flag' src={countryDetail.flag} alt={countryDetail.name} />
                 <h1>{countryDetail.name} - {countryDetail.id}</h1>
                 <h1>{countryDetail.continent}</h1>
+                <div className='voltear'>
+                  <p>Girar para detalles</p>
+                  <img className="reverso" src={imgReverse} alt="asdsad" />
+                </div>
               </div>
               <div className='infoSecundaria'>
                 <h1>Detalles</h1>

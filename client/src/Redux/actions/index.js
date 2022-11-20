@@ -10,7 +10,7 @@ export const POST_ACTIVITY = 'POST_ACTIVITY';
 export const GET_ACTIVITIES = 'GET_ACTIVITIES';
 export const FILTER_BY_ACTIVITY = 'FILTER_BY_ACTIVITY';
 
-// const baseUrl = 'http://localhost:3001'
+//const baseUrl = 'http://localhost:3001'
 const baseUrl = 'https://pi-countries-back-production-b7fd.up.railway.app'
 
 export const getAllCountries = () => {

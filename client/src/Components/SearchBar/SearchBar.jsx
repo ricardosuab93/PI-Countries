@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getCountryByName } from '../../Redux/actions';
 
-const SearchBar = () => {
+const SearchBar = ({setCurrentPage}) => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
 
@@ -17,8 +17,9 @@ const SearchBar = () => {
 
   //React.useEffect(() => { dispatch(actions.getCountryDetail(id)) }, [id, dispatch] ) //asdad
   React.useEffect(() => { 
-    dispatch(getCountryByName(name)) 
-  }, [name, dispatch] ) //asdad
+    dispatch(getCountryByName(name))
+    setCurrentPage(1)
+  }, [name,setCurrentPage, dispatch] ) //asdad
 
 
   return (

@@ -75,16 +75,17 @@ const CreateForm = () => {
   }
 
   const handleCountriesSelected = (e) => {
-    setInput({
-      ...input,
-      //countryId: [state.countryId.concat(e.target.value)]
-      countries: [...input.countries, e.target.value]
-      // input.countries.includes(e.target.value)?alert('Ya existe'):
-    })
-    setErrors(validate({
-      ...input,
-      countries: [...input.countries, e.target.value]
-    }))
+    if (e.target.value !== 'Select the countries of the activity...')
+      setInput({
+        ...input,
+        //countryId: [state.countryId.concat(e.target.value)]
+        countries: [...input.countries, e.target.value]
+        // input.countries.includes(e.target.value)?alert('Ya existe'):
+      })
+      setErrors(validate({
+        ...input,
+        countries: [...input.countries, e.target.value]
+      }))
 
     //console.log(input.countries)
   }
@@ -151,7 +152,7 @@ const CreateForm = () => {
           <div className={s.fieldContainer}>
             <label className={s.label}>Paises: </label>
             <select className={s.selectForm} name='countries' onChange={handleCountriesSelected} >
-              <option  >Select the countries of the activity...</option>
+              <option >Select the countries of the activity...</option>
               {countries?.map(c => (
                 <option key={c.id} value={c.id}>{c.name}</option>
               ))}   

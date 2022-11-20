@@ -23,6 +23,18 @@
     display: flex;
     flex-direction: row;
 }
+.voltear{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.reverso{
+    padding: 3px 6px;
+    width: 1.5rem;
+    height: 2rem;
+}
+
 
 .countryDetail{
     display: flex;
@@ -49,11 +61,11 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border: 2px hidden;
 }
-.card img {
+.flag {
     padding: 6px 12px;
     width: 15rem;
     height: 10rem;
-  }
+}
 
 .countryDetail:hover .card{
     transform: rotateY(180deg);
