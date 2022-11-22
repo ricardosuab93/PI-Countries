@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import * as actions from '../../Redux/actions';
-import CountryCard from '../CountryCard/CountryCard.jsx';
+import CountryCard from '../CountryCard/CountryCard3.jsx';
 
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import SortAlph from '../Barra/SortAlph.jsx';
