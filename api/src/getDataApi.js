@@ -1,6 +1,6 @@
 const axios = require('axios');
 const { Country } = require('./db.js');
-const apiUrl = 'https://restcountries.com/v3/all';
+//const apiUrl = 'https://restcountries.com/v3/all';
 
 const getDataApi = async() => {
     const apiUrl = await axios.get('https://restcountries.com/v3/all');
