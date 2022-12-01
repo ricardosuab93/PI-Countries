@@ -10,6 +10,7 @@ import CountryCard from '../CountryCard/CountryCard3.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 import SortAlph from '../Barra/SortAlph.jsx';
 import SortPop from '../Barra/SortPop.jsx';
+import SortArea from '../Barra/SortArea.jsx';
 import FilterCont from '../Barra/FilterCont.jsx';
 import Pagination from '../PaginationComp/Pagination';
 import FilterAct from '../Barra/FilterAct.jsx';
@@ -71,6 +72,12 @@ const Home = () => {
     setCurrentPage(1)
     //console.log('sortCountriesPop '+e.target.value)
   }
+  function sortCountriesArea(e){
+    dispatch(actions.sortCountriesArea(e.target.value))
+    setOption(e.target.value);
+    setCurrentPage(1)
+    //console.log('sortCountriesPop '+e.target.value)
+  }
 
   // FILTROS
   function filterCountriesCont(e){
@@ -107,6 +114,7 @@ const Home = () => {
         </div>
         <div className='contentContainer'>
           <div className='filterContainer'>
+            <SortArea handlesortCountriesArea = {sortCountriesArea}/>
             <SortAlph handleSortCountries = {sortCountriesAlph} /> 
             <SortPop handleSortCountries = {sortCountriesPop} />
             <FilterCont handleFilterContinent = {filterCountriesCont} />

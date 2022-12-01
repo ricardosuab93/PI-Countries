@@ -7,7 +7,8 @@ import {
   SORT_COUNTRIES_POP, 
   POST_ACTIVITY,
   GET_ACTIVITIES,
-  FILTER_BY_ACTIVITY
+  FILTER_BY_ACTIVITY,
+  SORT_COUNTRIES_AREA
 } from '../actions';
 
 const initialState = {
@@ -59,6 +60,13 @@ const rootReducer = (state = initialState, action) => {
       return { 
         ...state, 
         countries :  action.payload === 'asc' ? state.countries.sort((a, b) => a.population - b.population) : state.countries.sort((a, b) => b.population - a.population),
+      }
+    
+    case SORT_COUNTRIES_AREA:
+      console.log('payloadArea: ' +action.payload) 
+      return {
+        ...state, 
+        countries :  action.payload === 'asc' ? state.countries.sort((a, b) => a.area - b.area) : state.countries.sort((a, b) => b.area - a.area),
       }
     
     case FILTER_BY_CONTINENT:

@@ -9,6 +9,7 @@ export const FILTER_BY_CONTINENT = 'FILTER_BY_CONTINENT';
 export const POST_ACTIVITY = 'POST_ACTIVITY';
 export const GET_ACTIVITIES = 'GET_ACTIVITIES';
 export const FILTER_BY_ACTIVITY = 'FILTER_BY_ACTIVITY';
+export const SORT_COUNTRIES_AREA = 'SORT_COUNTRIES_AREA '
 
 //const baseUrl = 'http://localhost:3001'
 const baseUrl = 'https://pi-countries-back-production-b7fd.up.railway.app'
@@ -58,6 +59,13 @@ export const filterByContinent = (continent) => {
         payload: continent
     }
 };
+
+export const sortCountriesArea = (order) => {
+    return {
+        type: SORT_COUNTRIES_AREA,
+        payload: order
+    }
+}
 
 
 export const postActivity = (payload) => {
