@@ -12,7 +12,7 @@ export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const SORT_COUNTRIES_AREA = "SORT_COUNTRIES_AREA ";
 
 //const baseUrl = 'http://localhost:3001'
-const baseUrl = "https://pi-countries-back-production-b7fd.up.railway.app";
+const baseUrl = "https://pi-countries-back-production-93e2.up.railway.app";
 
 export const getAllCountries = () => {
   return async function (dispatch) {
