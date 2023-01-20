@@ -111,6 +111,7 @@ const Home = () => {
         <div className='headerContainer'>
           <h1>Henry Countries</h1>
           <Link className='linkCreate' to = '/activities'> <h2>Crear activididad</h2> </Link>
+          <Link className='linkCreate' to = '/about'> <h2>About</h2> </Link>
         </div>
         <div className='contentContainer'>
           <div className='filterContainer'>
